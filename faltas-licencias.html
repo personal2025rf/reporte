@@ -110,6 +110,50 @@
   }
 
   .footer{margin:30px 0 15px;color:var(--muted);font-size:12px;text-align:center}
+
+  /* Estilos para impresión - MODIFICADO */
+  @media print {
+    /* Ocultar elementos que no deben imprimirse */
+    .calendar, .card:first-child, .footer, .toolbar:first-child, hr, form, .title,
+    .pagination-controls, #paginationControls, .btn {
+      display: none !important;
+    }
+    
+    .container {
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    
+    .cols-2 {
+      grid-template-columns: 1fr !important;
+    }
+    
+    .card {
+      box-shadow: none !important;
+      border-radius: 0 !important;
+      padding: 0 !important;
+    }
+    
+    table {
+      min-width: 100% !important;
+      border-spacing: 0 !important;
+    }
+    
+    th, td {
+      padding: 8px 12px !important;
+    }
+    
+    /* Ocultar columna de Acciones en impresión */
+    th:last-child, td:last-child {
+      display: none !important;
+    }
+    
+    /* Ocultar la columna de Color si es necesario */
+    /* th:nth-child(5), td:nth-child(5) {
+      display: none !important;
+    } */
+  }
 </style>
 <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
